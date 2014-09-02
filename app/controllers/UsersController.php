@@ -4,7 +4,7 @@ class UsersController extends BaseController {
 
   private $userRepository;
 
-  public function __construct(DatabaseUserRepository $userRepository)
+  public function __construct(UserRepository $userRepository)
   {
     $this->userRepository = $userRepository;
   }

@@ -1,6 +1,6 @@
 <?php
 
-class DatabaseUserRepository {
+class DatabaseUserRepository implements UserRepository {
 
   public function getBySerial($serial)
   {

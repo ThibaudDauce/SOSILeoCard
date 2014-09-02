@@ -2,8 +2,15 @@
 
 class UsersController extends BaseController {
 
-  public function show($id)
+  private $userRepository;
+
+  public function __construct(DatabaseUserRepository $userRepository)
   {
-    return User::findOrFail($id);
+    $this->userRepository = $userRepository;
+  }
+
+  public function show($serial)
+  {
+    return $this->userRepository->getBySerial($serial);
   }
 }

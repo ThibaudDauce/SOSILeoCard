@@ -17,7 +17,7 @@ class UserTest extends TestCase {
   }
 
   public function testInvalideGet()     {
-    $response = $this->call('GET', 'users/batch', ['data' => ['04:5c:8b:12:3e:27:80', 'dozfeziufhiz']]);
+    $response = $this->call('GET', 'users/batch', ['data' => ['045c8b123e2780', 'dozfeziufhiz']]);
 
     // Test code HTTP
     $this->assertResponseStatus(206);
@@ -25,11 +25,11 @@ class UserTest extends TestCase {
     // Test variable valid
     $content = json_decode($response->getContent());
     $this->assertFalse($content->valid);
-    
+
   }
 
   public function testValideGet()     {
-    $response = $this->call('GET', 'users/batch', ['data' => ['04:5c:8b:12:3e:27:80']]);
+    $response = $this->call('GET', 'users/batch', ['data' => ['045c8b123e2780']]);
 
     // Test code HTTP
     $this->assertResponseStatus(200);

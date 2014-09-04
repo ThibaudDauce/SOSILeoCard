@@ -11,4 +11,12 @@
 |
 */
 
+Route::get('/', function() {
+  return Response::json([
+    'title'   => 'Projet SOSI : badgeur de cantine webservice',
+    'message' => 'Vous êtes bien arrivé !',
+    'documentation' => 'https://github.com/ThibaudDauce/SOSILeoCard'
+  ]);
+});
+
 Route::get('users/batch', 'UsersController@batch');

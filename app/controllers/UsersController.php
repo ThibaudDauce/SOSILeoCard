@@ -47,13 +47,13 @@ class UsersController extends Controller {
           'code' => 2,
           'message' => 'Toutes les données n\'ont pas pu être récupérées.'
         ]
-      ], 206);
+      ], 206, [], JSON_NUMERIC_CHECK);
     }
 
     // On retourne le résultat formaté en json.
     return Response::json([
       'data'  => $data,
       'valid' => true
-    ]);
+    ], 200, [], JSON_NUMERIC_CHECK);
   }
 }

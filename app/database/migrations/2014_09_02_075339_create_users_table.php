@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration {
 			$table->string('serial');
 			$table->string('prenom');
 			$table->string('nom');
-			$table->timestamps();
 		});
 	}
 

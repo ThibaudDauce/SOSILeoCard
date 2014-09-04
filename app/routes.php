@@ -11,4 +11,5 @@
 |
 */
 
+Route::get('users/batch', 'UsersController@batch');
 Route::resource('users', 'UsersController', ['only' => 'show']);

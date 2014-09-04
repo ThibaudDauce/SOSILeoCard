@@ -24,9 +24,10 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(function() {
-	return 'local';
-});
+$env = $app->detectEnvironment([
+	'local' => ['cortex'],
+	'production' => ['teen-quotes-staging'],
+	]);
 
 /*
 |--------------------------------------------------------------------------

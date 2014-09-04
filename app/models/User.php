@@ -16,4 +16,11 @@ class User extends Eloquent {
 	 */
 	protected $fillable = ['serial', 'prenom', 'nom'];
 
+	/**
+	 * Ne pas générer automatiquement les champs updated_at et created_at.
+	 *
+	 * @var bool
+	 */
+	public $timestamps = false;
+
 }

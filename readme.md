@@ -1,3 +1,6 @@
+[![Build Status](https://img.shields.io/travis/ThibaudDauce/SOSILeoCard/master.svg?style=flat)](https://travis-ci.org/ThibaudDauce/SOSILeoCard)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE.md)
+
 # Carte de cantine BackOffice API
 
 - **[<code>GET</code> user/batch]** Récupère les informations utilisateur depuis une liste de tags NFC fournie.

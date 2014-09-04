@@ -20,10 +20,10 @@ class UsersController extends Controller {
   public function batch()
   {
     // On récupère les données envoyées via POST.
-    $batch = Input::get('data');
+    $batch = Input::get('data', null);
 
     // Si les données envoyées sont vides, on retourne une erreur 400.
-    if (empty($batch))
+    if (is_null($batch))
     {
       return Response::json([
         'valid' => false,
@@ -38,7 +38,7 @@ class UsersController extends Controller {
     $data = $this->userRepository->getBySerialBatch($batch);
 
     // Si le retour n'est pas complet, on retourne le résultat avec un code HTTP 206 Partial Content.
-    if (count($result['data']) != count($batch))
+    if (count($data) != count($batch))
     {
       return Response::json([
         'data'  => $data,
@@ -52,8 +52,8 @@ class UsersController extends Controller {
 
     // On retourne le résultat formaté en json.
     return Response::json([
-      'data'  => $data
-      'valid' => true,
+      'data'  => $data,
+      'valid' => true
     ]);
   }
 }

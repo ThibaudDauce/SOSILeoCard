@@ -25,7 +25,7 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment([
-	'local' => ['cortex'],
+	'local' => ['cortex', 'MacBook-Pro-de-Florian.local'],
 	'production' => ['teen-quotes-staging'],
 	]);
 

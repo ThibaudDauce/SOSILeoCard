@@ -15,7 +15,12 @@ Route::get('/', function() {
   return Response::json([
     'title'   => 'Projet SOSI : badgeur de cantine webservice',
     'message' => 'Vous êtes bien arrivé !',
-    'documentation' => 'https://github.com/ThibaudDauce/SOSILeoCard'
+    'documentation' => 'https://github.com/ThibaudDauce/SOSILeoCard',
+    'examples' => [
+      'http://sosi.thibaud-dauce.fr/users/batch',
+      'http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04:5c:8b:12:3e:27:80',
+      'http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04:5c:8b:12:3e:27:80&data[3]=zefz'
+    ]
   ]);
 });
 

@@ -11,6 +11,7 @@
 http://sosi.thibaud-dauce.fr/users/batch
 
 *Résultat :*
+
 <code>
 {"valid":false,"error":{"code":1,"message":"Les donn\u00e9es envoy\u00e9es sont vides."}}
 </code>
@@ -21,6 +22,7 @@ http://sosi.thibaud-dauce.fr/users/batch
 http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04:5c:8b:12:3e:27:80
 
 *Résultat :*
+
 <code>
 {"data":[{"id":"1","serial":"04:5c:8b:12:3e:27:80","prenom":"Thibaud","nom":"Dauce",
 </code>
@@ -40,6 +42,7 @@ http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04
 http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04:5c:8b:12:3e:27:80&data[3]=zefz
 
 *Résultat :*
+
 <code>
 {"data":[{"id":"1","serial":"04:5c:8b:12:3e:27:80","prenom":"Thibaud","nom":"Dauce",
 </code>

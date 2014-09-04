@@ -1,0 +1,53 @@
+\chapter{Choix des protocoles et standards pour les échanges de données}
+
+Pour cette partie backoffice de l'application de carte de cantine, nous avions
+deux contraintes à respecter. La première était d'utiliser un protocole d'échange
+ de données compatible avec Android. La seconde était de choisir un format de données
+ facilement exploitable.
+
+ Comme vous allez le voir maintenant, nous avons choisi le couple REST/JSON pour cette
+ tâche.
+
+\section{Le REpresentational State Transfert ou REST}
+
+La première chose à préciser est que REST n'est pas un protocole en lui même, mais
+plutôt une architecture utilisant le protocole HTTP. L'architecture est de donc de type
+CRUD (Create, Retrieve, Update, Delete), mais nous n'utiliserons que le GET de HTTP,
+qui correspond à la récupération, à la lecture d'une ou plusieurs entrées en base.
+
+De par son universalité, le HTTP ne pose aucun problème quant à la compatibilité
+avec la partie Android du frontoffice. Pour accéder aux données, chaque ressource doit
+avoir une URI (Uniform Ressource Identifier), à laquelle on fait un appel via une
+des méthodes HTTP en fonction de l'opération CRUD à réaliser. Côté Laravel, cette
+gestion des routes et méthodes est gérée nativement, ce qui permet une mise en place
+rapide et efficace de cette architecture.
+
+\section{Le format de données}
+
+Mais le choix du protocole et de l'architecture n'est pas suffisant pour définir
+la communication entre notre serveur et la partie frontoffice. En effet, nous devons
+aussi choisir sous quel format ces données sont échangées. Plusieurs possibilités
+se sont offertes à nous.
+
+\subsection{Le XML}
+
+Format connu et le plus utilisé, le XML est intégré par défaut dans de nombreux
+langages. Il permet d'exploiter les données même si l'on ne connait pas leur structure.
+Il a en effet vocation à être un langage de présentation.
+
+L'inconvénient cependant est qu'il est plutôt compliqué à générer et transformer
+en objet.
+
+\subsection{Le JSON}
+
+JSON est le format qui monte en ce moment et qui vient de JavaScript où il est géré
+nativement. Il n'est pas intégré de base dans la plupart des langages mais dispose
+de nombreuses implémentations qui permettent de le gérer facilement. Il est plus
+léger que le XML et permet d'être lisible plus facilement par l'homme.
+
+L'inconvénient, c'est qu'il faut s'entendre sur le format de la ressource car celle-ci
+n'est pas décrite et structurée explicitement comme dans le xml.
+
+L'application frontend ne requetant que de simples adresses NFC au serveur, notre
+choix c'est porté sur le JSON car les données échangées sont simples (nom, prénom,
+adresse NFC) et que ce format de données est géré par android et Laravel.

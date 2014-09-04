@@ -32,11 +32,6 @@ class UserTableSeeder extends Seeder {
       'prenom' => 'Pierre-Alain',
       'nom'    => 'Emo',
     ]);
-    User::create([
-      'serial' => '044583123e2780',
-      'prenom' => 'Jérôme',
-      'nom'    => 'Desseaux',
-    ]);
 
     User::create([
       'serial' => '047c88123e2780',

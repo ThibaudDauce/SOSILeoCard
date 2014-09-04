@@ -21,7 +21,6 @@ class UsersController extends Controller {
   {
     // On récupère les données envoyées via POST.
     $batch = Input::get('data', null);
-
     // Si les données envoyées sont vides, on retourne une erreur HTTP 400 Bad Request.
     if (is_null($batch))
     {

@@ -33,7 +33,7 @@ http://sosi.thibaud-dauce.fr/users/batch
 
 http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04:5c:8b:12:3e:27:80
 
-*Résultat : réponse HTTP 200 Ok *
+*Résultat : réponse HTTP 200 Ok*
 
 ```json
 {

@@ -1,21 +1,25 @@
 <?php
 
-class UsersController extends BaseController {
+class UsersController extends Controller {
 
   private $userRepository;
 
+  /*
+   * On injecte dans le controller une instance implémentant le contrat UserRepository afin d'executer nos requêtes.
+   *
+   * @params UserRepository
+   */
   public function __construct(UserRepository $userRepository)
   {
     $this->userRepository = $userRepository;
   }
 
-  public function show($serial)
-  {
-    return $this->userRepository->getBySerial($serial);
-  }
-
+  /*
+   * Récupérer une série d'entrées de la base de données via leurs numéros de carte NFC.
+  */
   public function batch()
   {
+    // On récupère les données envoyées via POST.
     $batch = Input::get('data');
 
     // On suppose que le retour est correct.
@@ -23,11 +27,12 @@ class UsersController extends BaseController {
       'valid' => true
     ];
 
+    // On récupère toutes les entrées correspondant aux numéros de carte NFC.
     $result['data'] = $this->userRepository->getBySerialBatch($batch);
 
+    // Si le retour n'est pas complet, on définit une erreur et un résultat invalide.
     if (count($result['data']) != count($batch))
     {
-      // Le retour n'est pas complet, on définit une erreur et un résultat invalide.
       $result['errors'] = [
         'code' => 1,
         'message' => 'Toutes les données n\'ont pas pu être récupérées.'
@@ -36,6 +41,7 @@ class UsersController extends BaseController {
       $result['valid'] = false;
     }
 
+    // On retourne le résultat formaté en json.
     return Response::json($result);
   }
 }

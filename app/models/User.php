@@ -1,28 +1,19 @@
 <?php
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Auth\Reminders\RemindableInterface;
-
-class User extends Eloquent implements UserInterface, RemindableInterface {
-
-	use UserTrait, RemindableTrait;
+class User extends Eloquent {
 
 	/**
-	 * The database table used by the model.
+	 * Le nom de la table utilisée pour ce model.
 	 *
 	 * @var string
 	 */
 	protected $table = 'users';
 
 	/**
-	 * The attributes excluded from the model's JSON form.
+	 * Les attributs qu'il est possible de passer en paramètre de la méthode `create`.
 	 *
 	 * @var array
 	 */
-	protected $hidden = array('password', 'remember_token');
-
 	protected $fillable = ['serial', 'prenom', 'nom'];
 
 }

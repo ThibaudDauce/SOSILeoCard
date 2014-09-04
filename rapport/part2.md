@@ -60,7 +60,7 @@ Mais dans le cas d'une application plus complexe, il est préférable de dissoci
 
 ### Utilisation d'un répertoire dans notre projet
 
-Afin de montrer les possibilités du framework Laravel ainsi que de permettre au futurs étudiants allant travailler sur l'application de partir sur des bonnes bases, nous avons décidé d'implémenter un répertoire pour les utilisateurs.
+Afin de montrer les possibilités du framework Laravel ainsi que de permettre aux futurs étudiants allant travailler sur l'application de partir sur de bonnes bases, nous avons décidé d'implémenter un répertoire pour les utilisateurs.
 
 Ce repertoire se présente sous la forme d'une classe nommée `DatabaseUserRepository` proposant une seule méthode : `getBySerialBatch`. Cette méthode prend en paramètre un tableau contenant les différents numéros de carte NFC et retourne une collection d'objets `User` via la méthode `whereIn` de l'ORM Eloquent.
 
@@ -80,13 +80,13 @@ public function __construct(DatabaseUserRepository $userRepository)
 }
 ```
 
-De cette manière, nous avons accès au répertoire dans notre contrôleur sans effort dans tout notre contrôleur.
+De cette manière, nous avons accès au répertoire dans notre contrôleur sans effort.
 
 ### "Code to an interface"
 
 La méthode présentée dans le paragraphe précédent présente l'avantage d'être simple à implémenter mais présente aussi un gros défaut : notre contrôleur est toujours lié à l'ORM via l'objet `DatabaseUserRepository`.
 
-En réalité, notre contrôleur n'a pas besoin de savoir quel type de répertoire il utilise, l'unique besoin est une fonction appelée `getBySerialBatch` prenant en paramètre un tableau d'identifiants NFC et retournant une collection d'utilisateurs. Ce qui est décrit ici est le principe même d'une interface. Nous avons donc créé une interface appelée `UserRepository` est fournissant la signature de méthode requise. Bien évidement, notre répertoire `DatabaseUserRepository` doit maintenant implémenter cette interface.
+En réalité, notre contrôleur n'a pas besoin de savoir quel type de répertoire il utilise, l'unique besoin est une fonction appelée `getBySerialBatch` prenant en paramètre un tableau d'identifiants NFC et retournant une collection d'utilisateurs. Ce qui est décrit ici est le principe même d'une interface. Nous avons donc créé une interface appelée `UserRepository` et fournissant la signature de méthode requise. Bien évidement, notre répertoire `DatabaseUserRepository` doit maintenant implémenter cette interface.
 
 Nous pouvons donc changer le pré-requis du constructeur de notre contrôleur par l'interface `UserRepository`.
 ```php

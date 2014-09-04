@@ -31,7 +31,7 @@ http://sosi.thibaud-dauce.fr/users/batch
 
 *Requête :*
 
-http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04:5c:8b:12:3e:27:80
+http://sosi.thibaud-dauce.fr/users/batch?data[1]=041c670a3e2780&data[2]=045c8b123e2780
 
 *Résultat : réponse HTTP 200 Ok*
 
@@ -41,19 +41,15 @@ http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04
     "data": [
         {
             "id": "1",
-            "serial": "04:5c:8b:12:3e:27:80",
+            "serial": "045c8b123e2780",
             "prenom": "Thibaud",
-            "nom": "Dauce",
-            "created_at": "2014-09-04 07:34:25",
-            "updated_at": "2014-09-04 07:34:25"
+            "nom": "Dauce"
         },
         {
             "id": "2",
-            "serial": "04:1c:67:0a:3e:27:80",
+            "serial": "041c670a3e2780",
             "prenom": "Florian",
-            "nom": "Lepetit",
-            "created_at": "2014-09-04 07:34:25",
-            "updated_at": "2014-09-04 07:34:25"
+            "nom": "Lepetit"
         }
     ],
     "valid": true
@@ -65,7 +61,7 @@ http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04
 
 *Requête :*
 
-http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04:5c:8b:12:3e:27:80&data[3]=zefz
+http://sosi.thibaud-dauce.fr/users/batch?data[1]=041c670a3e2780&data[2]=045c8b123e2780&data[3]=zefz
 
 *Résultat : réponse HTTP 206 Partial Content*
 
@@ -75,19 +71,15 @@ http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04
     "data": [
         {
             "id": "1",
-            "serial": "04:5c:8b:12:3e:27:80",
+            "serial": "045c8b123e2780",
             "prenom": "Thibaud",
-            "nom": "Dauce",
-            "created_at": "2014-09-04 07:34:25",
-            "updated_at": "2014-09-04 07:34:25"
+            "nom": "Dauce"
         },
         {
             "id": "2",
-            "serial": "04:1c:67:0a:3e:27:80",
+            "serial": "041c670a3e2780",
             "prenom": "Florian",
-            "nom": "Lepetit",
-            "created_at": "2014-09-04 07:34:25",
-            "updated_at": "2014-09-04 07:34:25"
+            "nom": "Lepetit"
         }
     ],
     "valid": false,

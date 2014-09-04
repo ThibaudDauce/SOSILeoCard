@@ -18,8 +18,8 @@ Route::get('/', function() {
     'documentation' => 'https://github.com/ThibaudDauce/SOSILeoCard',
     'examples' => [
       'http://sosi.thibaud-dauce.fr/users/batch',
-      'http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04:5c:8b:12:3e:27:80',
-      'http://sosi.thibaud-dauce.fr/users/batch?data[1]=04:1c:67:0a:3e:27:80&data[2]=04:5c:8b:12:3e:27:80&data[3]=zefz'
+      'http://sosi.thibaud-dauce.fr/users/batch?data[1]=041c670a3e2780&data[2]=045c8b123e2780',
+      'http://sosi.thibaud-dauce.fr/users/batch?data[1]=041c670a3e2780&data[2]=045c8b123e2780&data[3]=zefz'
     ]
   ]);
 });

@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '107.170.115.153',
+			'host'      => 'localhost',
 			'database'  => 'sosi',
 			'username'  => 'sosi',
 			'password'  => 'lasosicestgenial4242',
